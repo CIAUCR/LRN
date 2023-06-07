@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<link rel="stylesheet" type="text/css" href="style.css">	
+<link rel="stylesheet" type="text/css" href="style_barra.css">
+	
+    <title>Plantaciones de caña de azúcar en CoopeVictoria R.L.</title>   
+
+
+<style> 
+	body  { 
+	  background-image: url("canal.png");           
+	  background-size: 100% auto;
+	  background-repeat: no-repeat; 
+	  margin: 1%; 
+	  
+	}
+</style>
+
+<meta charset="UTF-8">
+	   
+<title>Getting Started - Leaflet js Map interactive library</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<div id="container"></div>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+
+	<!-- Hoja de estilos CSS de Leaflet -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>	
+	<!-- Biblioteca JS de Leaflet -->
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>	
+	<!-- Complemento Leaflet-providers -->
+	<script src="js/leaflet-providers.js"></script>	
+	
+	<!-- En HTML: enlace a Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+	integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	crossorigin="anonymous" />
+	
+	<!-- Enlace a biblioteca JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous">
+	
+</script>
+</head>
+
+
+<body>
+
+<div class="topnav">
+  <a href="index.html">Principal</a>
+  <a href="Consulta.html">Consulta de información</a>
+  <a href="Glosario.html">Glosario</a>
+  <a class="active" href="contactos.html">Contactos</a>
+  
+  
+</div>
+
+
+<style>
+h1 {
+  text-shadow: 2px 2px 5px white;
+}
+</style>
+
+
+<h1 style="text-align:center;margin-left: 100px; margin-right: 100px;" >Sistema de consulta</h1>
+
+
+<div id="panel" style = "margin-left:75px; margin-right: 30px; background-color:#D3D3D3;">
+					<label>Selecione un cantón</label>
+					<select id="estilo" onchange="estiloSelect()">
+                <option value="Todas">TODOS</option>
+	        <option value="ABANGARES">ABANGARES</option>
+		<option value="ACOSTA">ACOSTA</option>
+		<option value="AGUIRRE">AGUIRRE</option>
+		<option value="ALAJUELA">ALAJUELA</option>
+		<option value="ALAJUELITA">ALAJUELITA</option>
+		<option value="ALFARO RUIZ">ALFARO RUIZ</option>
+		<option value="ALVARADO">ALVARADO</option>
+		<option value="ASERRI">ASERRI</option>
+		<option value="ATENAS">ATENAS</option>
+		<option value="BAGACES">BAGACES</option>
+		<option value="BARVA">BARVA</option>
+		<option value="BELEN">BELEN</option>
+		<option value="BUENOS AIRES">BUENOS AIRES</option>
+		<option value="CANAS">CANAS</option>
+		<option value="CARRILLO">CARRILLO</option>
+		<option value="CARTAGO">CARTAGO</option>
+		<option value="CORREDORES">CORREDORES</option>
+		<option value="COTOBRUS">COTOBRUS</option>
+		<option value="CURRIDABAT">CURRIDABAT</option>
+		<option value="DESAMPARADOS">DESAMPARADOS</option>
+		<option value="DOTA">DOTA</option>
+		<option value="EL GUARCO">EL GUARCO</option>
+		<option value="ESCAZU">ESCAZU</option>
+		<option value="ESPARZA">ESPARZA</option>
+		<option value="FLORES">FLORES</option>
+		<option value="GARABITO">GARABITO</option>
+		<option value="GOICOECHEA">GOICOECHEA</option>
+		<option value="GOLFITO">GOLFITO</option>
+		<option value="GRECIA">GRECIA</option>
+		<option value="GUACIMO">GUACIMO</option>
+		<option value="GUATUSO">GUATUSO</option>
+		<option value="HEREDIA">HEREDIA</option>
+		<option value="HOJANCHA">HOJANCHA</option>
+		<option value="JIMENEZ">JIMENEZ</option>
+		<option value="LA CRUZ">LA CRUZ</option>
+		<option value="LA UNION">LA UNION</option>
+		<option value="LEON CORTES">LEON CORTES</option>
+		<option value="LIBERIA">LIBERIA</option>
+		<option value="LIMON">LIMON</option>
+		<option value="LOS CHILES">LOS CHILES</option>
+		<option value="MATINA">MATINA</option>
+		<option value="MONTES DE OCA">MONTES DE OCA</option>
+		<option value="MONTES DE ORO">MONTES DE ORO</option>
+		<option value="MORA">MORA</option>
+		<option value="MORAVIA">MORAVIA</option>
+		<option value="NANDAYURE">NANDAYURE</option>
+		<option value="NARANJO">NARANJO</option>
+		<option value="NICOYA">NICOYA</option>
+		<option value="OREAMUNO">OREAMUNO</option>
+		<option value="OROTINA">OROTINA</option>
+		<option value="OSA">OSA</option>
+		<option value="PALMARES">PALMARES</option>
+		<option value="PARAISO">PARAISO</option>
+		<option value="PARRITA">PARRITA</option>
+		<option value="PEREZ ZELEDON">PEREZ ZELEDON</option>
+		<option value="POAS">POAS</option>
+		<option value="POCOCI">POCOCI</option>
+		<option value="PUNTARENAS">PUNTARENAS</option>
+		<option value="PURISCAL">PURISCAL</option>
+		<option value="SAN CARLOS">SAN CARLOS</option>
+		<option value="SAN ISIDRO">SAN ISIDRO</option>
+		<option value="SAN JOSE">SAN JOSE</option>
+		<option value="SAN MATEO">SAN MATEO</option>
+		<option value="SAN PABLO">SAN PABLO</option>
+		<option value="SAN RAFAEL">SAN RAFAEL</option>
+		<option value="SAN RAMON">SAN RAMON</option>
+		<option value="SANTA ANA">SANTA ANA</option>
+		<option value="SANTA BARBARA">SANTA BARBARA</option>
+		<option value="SANTA CRUZ">SANTA CRUZ</option>
+		<option value="SANTO DOMINGO">SANTO DOMINGO</option>
+		<option value="SARAPIQUI">SARAPIQUI</option>
+		<option value="SIQUIRRES">SIQUIRRES</option>
+		<option value="TALAMANCA">TALAMANCA</option>
+		<option value="TARRAZU">TARRAZU</option>
+		<option value="TIBAS">TIBAS</option>
+		<option value="TILARAN">TILARAN</option>
+		<option value="TURRIALBA">TURRIALBA</option>
+		<option value="TURRUBARES">TURRUBARES</option>
+		<option value="UPALA">UPALA</option>
+		<option value="VALVERDE VEGA">VALVERDE VEGA</option>
+		<option value="VASQUEZ DE CORONADO">VASQUEZ DE CORONADO</option>
+					</select>
+</div>
+	
+<!-- Elemento div para contener el mapa -->
+<div id="mapid"></div>	
+
+
+<!-- Código principal en JS -->
+	<script src="js/scripts.js"></script>	
+
+
+ 
+<!--<div class="row" style="background:rgba(255,255,255,.85);margin-top: 80px;"> 
+ <center>
+	<img src="logoucr.png" alt="Logo UCR" width="470" height="100" align=”middle”><img src="logocia.png" alt="Logo del CIA" width="240" height="98" align=”middle”><img src="logocoope.png" alt="Logo de CoopeVictoria R.L." width="280" height="110" align=”middle”>
+  </center>
+
+ </div>-->
+
+</body>
+</html>
